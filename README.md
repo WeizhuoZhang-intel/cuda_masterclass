@@ -47,3 +47,27 @@ Cuda MasterClass code base from Udemy
   - **Grid & Block**
     - **Grid**: is a collection of all the threads launch for a kernel
     - **Block**: Threads in a grid organized in to groups called thread blocks.
+    - `Kernel_name <<< number_of_blocks, thread_per_block >>> (arguments)`
+    - **Multi-dimension**: `dim3 variable_name (X,Y,Z)`
+      - `variable_name.x`
+      - `variable_name.y`
+      - `variable_name.z`
+    - **`dim3` for block and grid**
+      - `dim3 block(4,1,1)`
+      - `dim3 grid(8,1,1)`
+    - **Limitation for block size**:
+      - `x <= 1024`
+      - `y <= 1024`
+      - `z <= 64`
+      - `x*y*z <= 1024`
+    - **Limitation for number of thread block in each dimension**:
+      - `x <= 2^32 - 1`
+      - `y <= 65536`
+      - `z <= 65536`
+
+- **Organization of threads in CUDA program 1**
+  - `threadIdx`:
+    - CUDA runtime uniquely initialized `threadIdx` variable for each thread depending on where that particular thread is located in the thread block.
+    - `threadIds` is `dim3` type variable.
+
+- **Organization of threads in CUDA program 2**
