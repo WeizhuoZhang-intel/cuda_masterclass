@@ -42,7 +42,8 @@ Cuda MasterClass code base from Udemy
     - Modifier: device code must have modifiers such as `__global__`, `__host__`, `__device__`
     - Return type: device code must has `void` return type. If you want to return some variables from kernel, you have to explicitly tranfer those memories using specific CUDA runtime function calls.
     - Call kernel function: `hello_cuda << <1,1 >> > ();` you have to specify kernel launch parameters
+      - `<< <1,20 >> >` will use `20` threads to run kernel.
 
-- **Grid & Block**
-  - **Grid**: is a collection of all the threads launch for a kernel
-  - **Block**: Threads in a grid organized in to groups called thread blocks.
+  - **Grid & Block**
+    - **Grid**: is a collection of all the threads launch for a kernel
+    - **Block**: Threads in a grid organized in to groups called thread blocks.
